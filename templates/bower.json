@@ -1,0 +1,8 @@
+{
+  "name": "<%= appName %>",
+  "version": "<%= appVersion %>",
+  "dependencies": {
+    "web-animations-js": "git://github.com/web-animations/web-animations-js.git#~1.0.5",
+    "lesshat": "~3.0.2"
+  }
+}
