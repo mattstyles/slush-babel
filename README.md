@@ -1,4 +1,4 @@
-# es2015 [![Build Status](https://secure.travis-ci.org/mattstyles/slush-es2015.png?branch=master)](https://travis-ci.org/mattstyles/slush-es2015) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-es2015.png)](http://badges.enytc.com/for/npm/slush-es2015)
+# slush-es2015 [![Build Status](https://secure.travis-ci.org/mattstyles/slush-es2015.png?branch=master)](https://travis-ci.org/mattstyles/slush-es2015) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-es2015.png)](http://badges.enytc.com/for/npm/slush-es2015)
 
 > Scaffold for a 6to5-browserify-react-less-hogan built site
 
@@ -19,30 +19,32 @@
 Install `slush-es2015` globally:
 
 ```bash
-$ npm install -g slush-es2015
+npm i -g slush
+npm i -g slush-es2015
 ```
 
 ### Usage
 
-Create a new folder for your project:
+Create a new folder for your project and run the slush generator within it:
 
 ```bash
-$ mkdir my-slush-es2015
+mkdir awesome-app && cd $_
+slush es2015
 ```
 
-Run the generator from within the new folder:
+## Building your awesome app
 
-```bash
-$ cd my-slush-es2015 && slush es2015
+There are a couple of `gulp` commands included to get your awesome app up and running, `build` will get prepare things for production whilst `watch` will produce a development build with sourcemaps and flowcheck support.
+
+```
+npm run build
+npm run watch
 ```
 
-## Getting To Know Slush
+## Iojs and kexec
 
-Slush is a tool that uses Gulp for project scaffolding.
+Currently `kexec` will throw an error installing gulp using `iojs`, dont worry about it, its fine and non-fatal. Given the rapid current speed of `iojs` it will likely be fixed shortly.
 
-Slush does not contain anything "out of the box", except the ability to locate installed slush generators and to run them with liftoff.
-
-To find out more about Slush, check out the [documentation](https://github.com/klei/slush).
 
 ## Contributing
 
