@@ -8,13 +8,10 @@
 
 'use strict';
 
-var gulp = require('gulp'),
-    install = require('gulp-install'),
-    conflict = require('gulp-conflict'),
-    template = require('gulp-template'),
-    rename = require('gulp-rename'),
-    _ = require('underscore.string'),
-    inquirer = require('inquirer');
+var gulp = require('gulp');
+var $ = require( 'gulp-load-plugins' )();
+var _ = require('underscore.string');
+var inquirer = require('inquirer');
 
 function format(string) {
     var username = string.toLowerCase();
@@ -41,7 +38,10 @@ gulp.task('default', function (done) {
     var prompts = [{
         name: 'appName',
         message: 'What is the name of your project?',
-        default: defaults.appName
+        default: defaults.appName,
+        validate: function( str ) {
+            return !/\s/.test( str );
+        }
     }, {
         name: 'appDescription',
         message: 'What is the description?'
@@ -62,26 +62,31 @@ gulp.task('default', function (done) {
         default: defaults.userName
     }, {
         type: 'confirm',
+        name: 'runInstall',
+        message: 'Do you want to run the install step?',
+    }, {
+        type: 'confirm',
         name: 'moveon',
         message: 'Continue?'
     }];
     //Ask
     inquirer.prompt(prompts,
-        function (answers) {
-            if (!answers.moveon) {
+        function ( answers ) {
+            if ( !answers.moveon ) {
                 return done();
             }
             answers.appNameSlug = _.slugify(answers.appName);
-            gulp.src(__dirname + '/templates/**')
-                .pipe(template(answers))
-                .pipe(rename(function (file) {
+
+            gulp.src( __dirname + '/templates/**' )
+                .pipe( $.template( answers ) )
+                .pipe( $.rename( function( file ) {
                     if (file.basename[0] === '_') {
                         file.basename = '.' + file.basename.slice(1);
                     }
                 }))
-                .pipe(conflict('./'))
-                .pipe(gulp.dest('./'))
-                .pipe(install())
+                .pipe( $.conflict('./') )
+                .pipe( gulp.dest('./') )
+                .pipe( $.if( !answers.runInstall, $.install() ) )
                 .on('end', function () {
                     done();
                 });
