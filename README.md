@@ -55,4 +55,4 @@ If you have any problem or suggestion please open an issue [here](https://github
 
 [WTFPL](https://github.com/mattstyles/slush-es2015/blob/master/LICENSE)
 
-Copyright (c) 2015, mattstyles @personalurban
+Copyright (c) 2015, Matt Styles
