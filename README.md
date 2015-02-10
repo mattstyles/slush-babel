@@ -41,7 +41,11 @@ npm run build
 npm run watch
 ```
 
-## Iojs and kexec
+## Project Structure
+
+
+
+## iojs and kexec
 
 Currently `kexec` will throw an error installing gulp using `iojs`, dont worry about it, its fine and non-fatal. Given the rapid current speed of `iojs` it will likely be fixed shortly.
 
