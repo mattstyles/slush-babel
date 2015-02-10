@@ -27,7 +27,7 @@
     "npm": ">=1.4.3"
   },
   "scripts": {
-    "test": "tape test/*.js"
+    "test": "NODE_ENV=test tape test/*.js"
   },
   "dependencies": {
     "gulp": "^3.6.2",
@@ -37,6 +37,7 @@
     "gulp-load-plugins": "^0.8.0",
     "gulp-rename": "^1.2.0",
     "gulp-template": "^0.1.1",
+    "gulp-util": "^3.0.3",
     "iniparser": "^1.0.5",
     "inquirer": "^0.4.1",
     "slush": ">=1.0.0"
@@ -50,7 +51,7 @@
     "browserify"
   ],
   "devDependencies": {
-    "minimist": "^1.1.0",
+    "mkdirp": "^0.5.0",
     "mock-gulp-dest": "^0.1.1",
     "tape": "^3.5.0"
   }
