@@ -1,41 +1,72 @@
 'use strict';
 
+var os = require( 'os' );
 
 var test = require( 'tape' );
+var mockPrompt = require( './utils/mockPrompt' );
 var gulp = require( 'gulp' );
 var mockGulpDest = require( 'mock-gulp-dest' )( gulp );
 
 require( '../slushfile' );
 
-process.chdir( __dirname );
+process.chdir( os.tmpDir() );
 
-test( 'basic test', function( t ) {
-    t.plan( 1 );
+test( 'Project scaffold', function( t ) {
+    t.plan( 3 );
 
     mockPrompt({
-        name: 'module'
+        name: 'test es2015'
     });
 
     gulp.start( 'default' )
         .once( 'stop', function() {
-            mockGulpDest.assertDestContains( 'package.json' );
-            t.equal(1,1);
+            mockGulpDest.assertDestContains([
+                'package.json',
+                'bower.json',
+                'gulpfile.js',
+                'README.md'
+            ]);
+            t.pass( 'Build files included' );
+
+            mockGulpDest.assertDestContains([
+                '.bowerrc',
+                '.gitignore',
+                '.jshintrc'
+            ]);
+            t.pass( 'Dotfiles included' );
+
+            mockGulpDest.assertDestContains({
+                src: {
+                    _: 'index.hjs',
+                    data: [
+                        'data.json'
+                    ],
+                    styles: {
+                        modules: [
+                            'vars.less'
+                        ],
+                        partials: [
+                            'base.less'
+                        ],
+                        _: 'main.less'
+                    },
+                    scripts: {
+                        components: [
+                            'appView.jsx'
+                        ],
+                        dispatchers: [
+                            'appDispatcher.js'
+                        ],
+                        _: [
+                            'main.jsx',
+                            'polyfill.js'
+                        ]
+                    },
+                    tmpl: [
+                        'header.hjs'
+                    ]
+                }
+            });
+            t.pass( 'Project files included' );
         });
 });
-
-
-/**
- * Mock inquirer prompt
- */
-function mockPrompt (answers) {
-  require('inquirer').prompt = function (prompts, done) {
-
-    [].concat(prompts).forEach(function (prompt) {
-      if (!(prompt.name in answers)) {
-        answers[prompt.name] = prompt.default;
-      }
-    });
-
-    done(answers);
-  };
-}
