@@ -39,8 +39,7 @@
     "gulp-template": "^0.1.1",
     "iniparser": "^1.0.5",
     "inquirer": "^0.4.1",
-    "slush": ">=1.0.0",
-    "underscore.string": "^2.3.3"
+    "slush": ">=1.0.0"
   },
   "keywords": [
     "slushgenerator",
@@ -51,6 +50,8 @@
     "browserify"
   ],
   "devDependencies": {
+    "minimist": "^1.1.0",
+    "mock-gulp-dest": "^0.1.1",
     "tape": "^3.5.0"
   }
 }
