@@ -29,9 +29,14 @@ var defaults = (function () {
         osUserName = homeDir && homeDir.split( '/' ).pop() || 'root',
         configFile = homeDir + '/.gitconfig',
         user = {};
+        
     if ( fs.existsSync( configFile ) ) {
         user = iniparser.parseSync( configFile ).user;
+    } else {
+        user.name = null;
+        user.email = null;
     }
+
     return {
         appName: workingDirName,
         userName: format( user.name ) || osUserName,
