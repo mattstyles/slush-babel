@@ -9,6 +9,7 @@
 'use strict';
 
 var fs = require( 'fs' );
+var path = require( 'path' );
 
 var gulp = require( 'gulp' );
 var $ = require( 'gulp-load-plugins' )();
@@ -67,6 +68,11 @@ gulp.task( 'default', function( done ) {
         default: defaults.userName
     }, {
         type: 'confirm',
+        name: 'npm',
+        message: 'Will you use npm to package it?',
+        default: false
+    }, {
+        type: 'confirm',
         name: 'continue',
         message: 'Continue?',
         default: true
@@ -77,8 +83,16 @@ gulp.task( 'default', function( done ) {
             return done();
         }
 
+        var templates = [
+            path.join( __dirname, 'templates/**' )
+        ];
+
+        if ( answers.npm ) {
+            templates.push( path.join( __dirname, 'opt-templates/servePath.js' ) );
+        }
+
         // Start scaffold
-        return gulp.src( __dirname + '/templates/**' )
+        return gulp.src( templates )
             .pipe( $.template( answers ) )
             .pipe( $.rename( function( file ) {
                 if ( file.basename[0] === '_' ) {

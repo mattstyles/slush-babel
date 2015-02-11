@@ -2,12 +2,18 @@
   "name": "<%= appName %>",
   "version": "<%= appVersion %>",
   "description": "<%= appDescription %>",
-  "main": "",
+  "main": "servePath.js",
   "scripts": {
+    <% if ( npm ) { %>"prepublish": "gulp build",<% } %>
     "build": "gulp build",
     "watch": "gulp watch -d",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  <% if ( npm ) { %>"files": [
+    "dist/**",
+    "servePath.js"
+  ],
+  "private": "true",<% } %>
   "author": "<%= authorName %>",
   "repository": "git://github.com/<%= authorName %>/<%= appName %>.git",
   "license": "WTFPL",
@@ -26,7 +32,7 @@
     "gulp": "^3.8.10",
     "gulp-hoganify": "^0.1.1",
     "gulp-if": "^1.2.5",
-    "gulp-less": "^2.0.1",
+    "gulp-less": "^2.0.3",
     "gulp-livereload": "^3.7.0",
     "gulp-load-plugins": "^0.8.0",
     "gulp-minify-css": "^0.4.3",
