@@ -140,49 +140,49 @@ project:
 Addding files on repo
 
 ```bash
-git commit -m "Add filename"
+git commit -m "#add filename"
 ```
 
 Updating files on repo
 
 ```bash
-git commit -m "Update filename, filename2, filename3"
+git commit -m "#update filename, filename2, filename3"
 ```
 
 Removing files on repo
 
 ```bash
-git commit -m "Remove filename"
+git commit -m "#remove filename"
 ```
 
 Renaming files on repo
 
 ```bash
-git commit -m "Rename filename"
+git commit -m "#rename filename"
 ```
 
 Fixing errors and issues on repo
 
 ```bash
-git commit -m "Fixed #issuenumber Message about this fix"
+git commit -m "#fix #issuenumber Message about this fix"
 ```
 
 Adding features on repo
 
 ```bash
-git commit -m "Add Feature: nameoffeature Message about this feature"
+git commit -m "#add nameoffeature Message about this feature"
 ```
 
 Updating features on repo
 
 ```bash
-git commit -m "Update Feature: nameoffeature Message about this update"
+git commit -m "#update nameoffeature Message about this update"
 ```
 
 Removing features on repo
 
 ```bash
-git commit -m "Remove Feature: nameoffeature Message about this"
+git commit -m "#remove nameoffeature Message about this"
 ```
 
 Ignoring Travis CI build on repo

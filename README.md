@@ -1,22 +1,22 @@
 # slush-es2015 [![Build Status](https://secure.travis-ci.org/mattstyles/slush-es2015.png?branch=master)](https://travis-ci.org/mattstyles/slush-es2015) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-es2015.png)](http://badges.enytc.com/for/npm/slush-es2015)
 
-> Scaffold for a 6to5-browserify-react-less-hogan built site
+> Scaffold for a babel-browserify-react-less-hogan built site
 
 ## Tech included by default
 
 * React
 * Flux
-* 6to5 (handles jsx transformation)
+* Babel (handles jsx transformation)
 * Flatiron Director
 * EventEmitter3
 * Web-animations-js
 * Less
-* Lesshat
+* Lesshat (for css3 shizzle)
 * Hogan
 
 ## Getting Started
 
-Install `slush-es2015` globally:
+Install `slush` and `slush-es2015` globally:
 
 ```bash
 npm i -g slush
@@ -40,15 +40,6 @@ There are a couple of `gulp` commands included to get your awesome app up and ru
 npm run build
 npm run watch
 ```
-
-## Project Structure
-
-
-
-## iojs and kexec
-
-Currently `kexec` will throw an error installing gulp using `iojs`, dont worry about it, its fine and non-fatal. Given the rapid current speed of `iojs` it will likely be fixed shortly.
-
 
 ## Contributing
 
