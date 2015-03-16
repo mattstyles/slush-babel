@@ -22,7 +22,7 @@ var buffer      = require( 'vinyl-buffer' );
 
 var browserify  = require( 'browserify' );
 var watchify    = require( 'watchify' );
-var to5ify      = require( '6to5ify' );
+var babelify    = require( 'babelify' );
 var flowcheck   = require( 'flowcheck' );
 
 
@@ -150,7 +150,7 @@ gulp.task( 'scripts', function() {
         }
 
         return compiler
-            .transform( to5ify )
+            .transform( babelify )
             .bundle()
             .on( 'error', $.util.log.bind( $.util, 'Browserify error' ) )
             .pipe( source( 'main.js' ) )
