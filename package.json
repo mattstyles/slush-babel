@@ -1,8 +1,8 @@
 {
-  "name": "slush-es2015",
-  "description": "Scaffold for a 6to5-browserify-react-less-hogan built site",
-  "version": "1.1.0",
-  "homepage": "https://github.com/mattstyles/slush-es2015",
+  "name": "slush-babel",
+  "description": "Scaffold for a babel-browserify-react-less-hogan built site",
+  "version": "1.2.0",
+  "homepage": "https://github.com/mattstyles/slush-babel",
   "author": {
     "name": "Matt Styles",
     "email": "matt@veryfizzyjelly.com",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mattstyles/slush-es2015.git"
+    "url": "git://github.com/mattstyles/slush-babel.git"
   },
   "bugs": {
-    "url": "https://github.com/mattstyles/slush-es2015/issues"
+    "url": "https://github.com/mattstyles/slush-babel/issues"
   },
   "licenses": [
     {
       "type": "WTFPL",
-      "url": "https://github.com/mattstyles/slush-es2015/blob/master/LICENSE"
+      "url": "https://github.com/mattstyles/slush-babel/blob/master/LICENSE"
     }
   ],
   "main": "slushfile.js",
@@ -45,6 +45,7 @@
   "keywords": [
     "slushgenerator",
     "6to5",
+    "babel",
     "react",
     "scaffold",
     "less",
