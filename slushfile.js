@@ -58,7 +58,8 @@ gulp.task( 'default', function( done ) {
         }
     }, {
         name: 'appDescription',
-        message: 'What is the description?'
+        message: 'What is the description?',
+        default: ''
     }, {
         name: 'appVersion',
         message: 'What is the version of your project?',
@@ -66,6 +67,7 @@ gulp.task( 'default', function( done ) {
     }, {
         name: 'authorName',
         message: 'What is the author name?',
+        default: defaults.userName
     }, {
         name: 'authorEmail',
         message: 'What is the author email?',
