@@ -25,7 +25,7 @@ class App {
 
     init( payload ) {
         React.render(
-            <AppView />,
+            <AppView middleware={ payload.middleware } />,
             document.getElementById( 'main' )
         );
     }

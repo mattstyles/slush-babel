@@ -3,40 +3,35 @@
 import React from 'react';
 import {Router} from 'director';
 
-var AppView = React.createClass({
-
-    getInitialState: function() {
-        return {
+export default class AppView extends React.Component {
+    constructor() {
+        this.state = {
             route: 'home'
         };
-    },
+    }
 
-    componentWillMount: function() {
+    componentWillMount() {
         var router = new Router();
 
         router.on( '/', this.home );
         router.on( '/admin', this.admin );
 
         router.init( '/' );
-    },
+    }
 
-    componentDidMount: function() {
-
-    },
-
-    home: function() {
+    home() {
         this.setState({
             route: 'home'
         });
-    },
+    }
 
-    admin: function() {
+    admin() {
         this.setState({
             route: 'admin'
         });
-    },
+    }
 
-    render: function() {
+    render() {
         return (
             <div>
                 <p>ES2015 ❤︎s you</p>
@@ -44,6 +39,4 @@ var AppView = React.createClass({
             </div>
         );
     }
-});
-
-export default AppView;
+}
