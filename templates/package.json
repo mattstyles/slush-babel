@@ -5,7 +5,7 @@
   "main": "servePath.js",
   "scripts": {
     <% if ( npm ) { %>"prepublish": "gulp build",<% } %>
-    "build": "gulp build",
+    "build": "NODE_ENV=prod gulp build",
     "watch": "gulp watch -d",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,11 +18,11 @@
   "repository": "git://github.com/<%= authorName %>/<%= appName %>.git",
   "license": "WTFPL",
   "dependencies": {
-    "babel": "^4.7.12",
+    "babel": "^4.7.16",
     "director": "^1.2.8",
     "eventemitter3": "^0.1.6",
     "flux": "^2.0.1",
-    "react": "^0.13.0"
+    "react": "^0.13.1"
   },
   "devDependencies": {
     "babelify": "^5.0.4",
@@ -32,7 +32,7 @@
     "gulp": "^3.8.11",
     "gulp-hoganify": "^0.1.1",
     "gulp-if": "^1.2.5",
-    "gulp-less": "^3.0.1",
+    "gulp-less": "^3.0.2",
     "gulp-livereload": "^3.8.0",
     "gulp-load-plugins": "^0.8.1",
     "gulp-minify-css": "^1.0.0",
