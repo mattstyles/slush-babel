@@ -1,4 +1,4 @@
-# slush-es2015 [![Build Status](https://secure.travis-ci.org/mattstyles/slush-babel.png?branch=master)](https://travis-ci.org/mattstyles/slush-babel) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-babel.png)](http://badges.enytc.com/for/npm/slush-babel)
+# slush-es2015 [![Build Status](https://secure.travis-ci.org/mattstyles/slush-babel.png?branch=master)](https://travis-ci.org/mattstyles/slush-babel) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-babel.png)](http://badges.enytc.com/for/npm/slush-babel) [![Dependency Status](https://david-dm.org/mattstyles/slush-babel.svg)](https://david-dm.org/mattstyles/slush-babel#info=dependencies&view=table)
 
 > Scaffold for a babel-browserify-react-less-hogan built site
 
