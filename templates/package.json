@@ -15,7 +15,7 @@
   ],
   "private": "true",<% } %>
   "author": "<%= authorName %>",
-  "repository": "git://github.com/<%= authorName %>/<%= appName %>.git",
+  "repository": "git://github.com/<%= userName %>/<%= appName %>.git",
   "license": "WTFPL",
   "dependencies": {
     "babel": "^4.7.16",
